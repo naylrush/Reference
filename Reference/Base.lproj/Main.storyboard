@@ -116,7 +116,7 @@
         <!--ReferenceVC-->
         <scene sceneID="ght-te-k9d">
             <objects>
-                <tableViewController id="4oY-6H-mkg" customClass="ReferenceVC" sceneMemberID="viewController">
+                <tableViewController id="4oY-6H-mkg" customClass="ReferenceVC" customModule="Reference" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qUr-Xl-Dg9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
