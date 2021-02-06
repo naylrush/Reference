@@ -9,24 +9,20 @@ import UIKit
 
 class ReferenceVC: UITableViewController {
     
-    var table: StatTable!
+    var statTable = StatTable()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     func calcStatTable(loadedCars: Int?, emptyCars: Int?, passengersCars: Int?) {
-        var stats = [Stat]()
-        
         for (brakePress, cars, axesCountByCar) in [(3.5, loadedCars, 4),
                                                    (7.0, emptyCars, 4),
                                                    (10.0, passengersCars, 4)] {
             if cars != nil {
-                stats.append(Stat(brakePress: brakePress, axesCount: cars! * axesCountByCar))
+                self.statTable.AddStat(Stat(brakePress: brakePress, axesCount: cars! * axesCountByCar))
             }
         }
-        
-        self.table = StatTable(stats: stats)
     }
 
     // MARK: - Table view data source
