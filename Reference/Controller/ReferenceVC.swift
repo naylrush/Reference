@@ -16,10 +16,17 @@ class ReferenceVC: UITableViewController {
     }
     
     func calcStatTable(loadedCars: Int?, emptyCars: Int?, passengersCars: Int?) {
-        print("Гружёные вагоны: \(loadedCars ?? 0)")
-        print("Порожние вагоны: \(emptyCars ?? 0)")
-        print("Пассажирские вагоны: \(passengersCars ?? 0)")
+        var stats = [Stat]()
         
+        for (brakePress, cars, axesCountByCar) in [(3.5, loadedCars, 4),
+                                                   (7.0, emptyCars, 4),
+                                                   (10.0, passengersCars, 4)] {
+            if cars != nil {
+                stats.append(Stat(brakePress: brakePress, axesCount: cars! * axesCountByCar))
+            }
+        }
+        
+        self.table = StatTable(stats: stats)
     }
 
     // MARK: - Table view data source
