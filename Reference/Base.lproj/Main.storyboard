@@ -131,24 +131,24 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="HnK-EM-htP">
-                                            <rect key="frame" x="55" y="11.666666666666666" width="304" height="20.333333333333336"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="HnK-EM-htP">
+                                            <rect key="frame" x="20" y="7" width="374" height="30"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFC-8l-78Q">
-                                                    <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20.333333333333332"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFC-8l-78Q">
+                                                    <rect key="frame" x="0.0" y="0.0" width="91.333333333333329" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAi-sT-Q6h">
-                                                    <rect key="frame" x="131.33333333333334" y="0.0" width="41.333333333333343" height="20.333333333333332"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAi-sT-Q6h">
+                                                    <rect key="frame" x="141.33333333333334" y="0.0" width="91.333333333333343" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozn-lL-CD9">
-                                                    <rect key="frame" x="262.66666666666669" y="0.0" width="41.333333333333314" height="20.333333333333332"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozn-lL-CD9">
+                                                    <rect key="frame" x="282.66666666666669" y="0.0" width="91.333333333333314" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -158,6 +158,8 @@
                                     <constraints>
                                         <constraint firstItem="HnK-EM-htP" firstAttribute="centerX" secondItem="mvI-dl-rhJ" secondAttribute="centerX" id="28i-Ke-mcG"/>
                                         <constraint firstItem="HnK-EM-htP" firstAttribute="centerY" secondItem="mvI-dl-rhJ" secondAttribute="centerY" id="5uy-5R-KIW"/>
+                                        <constraint firstItem="HnK-EM-htP" firstAttribute="leading" secondItem="mvI-dl-rhJ" secondAttribute="leading" constant="20" id="Oz3-pf-lW9"/>
+                                        <constraint firstAttribute="trailing" secondItem="HnK-EM-htP" secondAttribute="trailing" constant="20" id="bG0-Qr-fzt"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
