@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DataVC.swift
 //  Reference
 //
 //  Created by Alexey Davletshin on 05.02.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DataVC: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
