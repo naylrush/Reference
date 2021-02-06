@@ -11,7 +11,7 @@
         <!--DataVC-->
         <scene sceneID="NUr-8P-bJE">
             <objects>
-                <viewController id="HS7-SC-duV" customClass="DataVC" sceneMemberID="viewController">
+                <viewController id="HS7-SC-duV" customClass="DataVC" customModule="Reference" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jpG-Me-mD8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
