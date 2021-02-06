@@ -8,15 +8,19 @@
 import UIKit
 
 class ReferenceVC: UITableViewController {
-
+    
+    var loadedCars: Int?
+    var emptyCars: Int?
+    var passengersCars: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        print("Гружёные вагоны: \(self.loadedCars ?? 0)")
+        print("Порожние вагоны: \(self.emptyCars ?? 0)")
+        print("Пассажирские вагоны: \(self.passengersCars ?? 0)")
+        
+        
     }
 
     // MARK: - Table view data source

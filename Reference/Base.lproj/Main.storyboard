@@ -53,7 +53,6 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="150" id="cGj-GH-9eY"/>
                                                         </constraints>
-                                                        <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue" enablesReturnKeyAutomatically="YES"/>
                                                     </textField>
@@ -62,7 +61,6 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="150" id="Cis-N3-Stq"/>
                                                         </constraints>
-                                                        <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue" enablesReturnKeyAutomatically="YES"/>
                                                     </textField>
@@ -71,7 +69,6 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="150" id="O4y-Qu-btI"/>
                                                         </constraints>
-                                                        <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     </textField>
@@ -93,7 +90,7 @@
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="4oY-6H-mkg" kind="show" id="Cz4-aC-B58"/>
+                                            <segue destination="4oY-6H-mkg" kind="show" identifier="showReference" id="Cz4-aC-B58"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -108,6 +105,11 @@
                             <constraint firstItem="cXJ-Vo-vCC" firstAttribute="leading" secondItem="g4l-lg-tKN" secondAttribute="leading" id="ze7-9k-XXg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emptyCarsField" destination="Ngt-X5-SGb" id="DaQ-Cp-K0l"/>
+                        <outlet property="loadedCarsField" destination="jCb-L5-Fll" id="Pk2-20-IiG"/>
+                        <outlet property="passengerCarsField" destination="Aao-m5-jLr" id="uaf-CB-yex"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PtW-GM-jmU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
