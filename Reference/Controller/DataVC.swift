@@ -18,9 +18,11 @@ class DataVC: UIViewController {
         
         guard let reference = segue.destination as? ReferenceVC else { return }
         
-        reference.loadedCars = Int(self.loadedCarsField.text ?? "")
-        reference.emptyCars = Int(self.emptyCarsField.text ?? "")
-        reference.passengersCars = Int(self.passengerCarsField.text ?? "")
+        let loadedCars = Int(self.loadedCarsField.text ?? "")
+        let emptyCars = Int(self.emptyCarsField.text ?? "")
+        let passengersCars = Int(self.passengerCarsField.text ?? "")
+        
+        reference.calcStatTable(loadedCars: loadedCars, emptyCars: emptyCars, passengersCars: passengersCars)
     }
     
 }

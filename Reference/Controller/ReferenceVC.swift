@@ -9,17 +9,16 @@ import UIKit
 
 class ReferenceVC: UITableViewController {
     
-    var loadedCars: Int?
-    var emptyCars: Int?
-    var passengersCars: Int?
+    var table: StatTable!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("Гружёные вагоны: \(self.loadedCars ?? 0)")
-        print("Порожние вагоны: \(self.emptyCars ?? 0)")
-        print("Пассажирские вагоны: \(self.passengersCars ?? 0)")
-        
+    }
+    
+    func calcStatTable(loadedCars: Int?, emptyCars: Int?, passengersCars: Int?) {
+        print("Гружёные вагоны: \(loadedCars ?? 0)")
+        print("Порожние вагоны: \(emptyCars ?? 0)")
+        print("Пассажирские вагоны: \(passengersCars ?? 0)")
         
     }
 
