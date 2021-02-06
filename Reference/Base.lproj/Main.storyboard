@@ -163,9 +163,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="axesCountLabel" destination="DAi-sT-Q6h" id="IZ9-69-HPb"/>
-                                    <outlet property="brakePressLabel" destination="TFC-8l-78Q" id="zor-d0-tf6"/>
-                                    <outlet property="pressingPadsLabel" destination="ozn-lL-CD9" id="5cp-Kb-Ob2"/>
+                                    <outlet property="centerLabel" destination="DAi-sT-Q6h" id="IZ9-69-HPb"/>
+                                    <outlet property="leftLabel" destination="TFC-8l-78Q" id="zor-d0-tf6"/>
+                                    <outlet property="rightLabel" destination="ozn-lL-CD9" id="5cp-Kb-Ob2"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

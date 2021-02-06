@@ -9,9 +9,9 @@ import UIKit
 
 class StatCell: UITableViewCell {
     
-    @IBOutlet weak var brakePressLabel: UILabel!
-    @IBOutlet weak var axesCountLabel: UILabel!
-    @IBOutlet weak var pressingPadsLabel: UILabel!
+    @IBOutlet weak var leftLabel: UILabel!
+    @IBOutlet weak var centerLabel: UILabel!
+    @IBOutlet weak var rightLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,15 +25,15 @@ class StatCell: UITableViewCell {
     }
     
     func refreshStat(_ stat: Stat) {
-        self.brakePressLabel.text = String(stat.brakePress)
-        self.axesCountLabel.text = String(stat.axesCount)
-        self.pressingPadsLabel.text = String(stat.pressingPads)
+        self.leftLabel.text = String(stat.brakePress)
+        self.centerLabel.text = String(stat.axesCount)
+        self.rightLabel.text = String(stat.pressingPads)
     }
     
     func refreshInTotal(_ inTotal: (Int, Int)) {
-        self.brakePressLabel.text = "Всего:"
-        self.axesCountLabel.text = String(inTotal.0)
-        self.pressingPadsLabel.text = String(inTotal.1)
+        self.leftLabel.text = "Всего:"
+        self.centerLabel.text = String(inTotal.0)
+        self.rightLabel.text = String(inTotal.1)
     }
 
 }
