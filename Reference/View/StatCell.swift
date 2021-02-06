@@ -23,5 +23,17 @@ class StatCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func refreshStat(_ stat: Stat) {
+        self.brakePressLabel.text = String(stat.brakePress)
+        self.axesCountLabel.text = String(stat.axesCount)
+        self.pressingPadsLabel.text = String(stat.pressingPads)
+    }
+    
+    func refreshInTotal(_ inTotal: (Int, Int)) {
+        self.brakePressLabel.text = "Всего:"
+        self.axesCountLabel.text = String(inTotal.0)
+        self.pressingPadsLabel.text = String(inTotal.1)
+    }
 
 }
