@@ -33,7 +33,9 @@ class ReferenceVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         typealias EmptyCell = UITableViewCell
         
-        var row = indexPath.row
+        let allThreeStatTableSize = 1 + threeStatTable.stats.count + 1
+        
+        let row = indexPath.row
         
         switch row {
         case 0: // Title
@@ -41,20 +43,20 @@ class ReferenceVC: UITableViewController {
             
             return cell
         case ...threeStatTable.stats.count: // Stats
-            row -= 1
+            let index = row - 1
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeStatCell", for: indexPath) as! ThreeStatCell
             
-            cell.refreshStat(threeStatTable.stats[row])
+            cell.refreshStat(threeStatTable.stats[index])
             
             return cell
-        case threeStatTable.stats.count + 1: // Sum
+        case allThreeStatTableSize - 1: // Sum
             let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeStatCell", for: indexPath) as! ThreeStatCell
         
             cell.refreshInTotal(threeStatTable.inTotal)
             
             return cell
-        case threeStatTable.stats.count + 2: // Empty
+        case allThreeStatTableSize: // Empty
             return EmptyCell()
         default:
             return EmptyCell()
