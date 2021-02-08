@@ -24,7 +24,7 @@ class DataVC: UIViewController {
         let passengersCars = Int(self.passengerCarsField.text ?? "")
         let trainMass = Int(self.trainMassField.text ?? "")
         
-        reference.calcStatTables(loadedCars: loadedCars, emptyCars: emptyCars, passengersCars: passengersCars, trainMass: trainMass)
+        reference.calcStatTables(emptyCars: emptyCars, loadedCars: loadedCars, passengersCars: passengersCars, trainMass: trainMass)
     }
     
 }
