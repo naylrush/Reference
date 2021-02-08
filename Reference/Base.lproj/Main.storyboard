@@ -203,8 +203,8 @@
                                     <constraints>
                                         <constraint firstItem="HnK-EM-htP" firstAttribute="centerX" secondItem="mvI-dl-rhJ" secondAttribute="centerX" id="28i-Ke-mcG"/>
                                         <constraint firstItem="HnK-EM-htP" firstAttribute="centerY" secondItem="mvI-dl-rhJ" secondAttribute="centerY" id="5uy-5R-KIW"/>
-                                        <constraint firstItem="HnK-EM-htP" firstAttribute="leading" secondItem="mvI-dl-rhJ" secondAttribute="leading" constant="20" id="Oz3-pf-lW9"/>
-                                        <constraint firstAttribute="trailing" secondItem="HnK-EM-htP" secondAttribute="trailing" constant="20" id="bG0-Qr-fzt"/>
+                                        <constraint firstItem="HnK-EM-htP" firstAttribute="leading" secondItem="mvI-dl-rhJ" secondAttribute="leadingMargin" id="AlT-sk-Xoa"/>
+                                        <constraint firstItem="HnK-EM-htP" firstAttribute="trailing" secondItem="mvI-dl-rhJ" secondAttribute="trailingMargin" id="fhD-g2-un7"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
