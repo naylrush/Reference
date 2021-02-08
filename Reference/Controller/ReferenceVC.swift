@@ -26,6 +26,7 @@ class ReferenceVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // ThreeStatTitle + ThreeStatTable + ThreeStatTable.InTotal
         return 1 + threeStatTable.stats.count + 1
     }
 
