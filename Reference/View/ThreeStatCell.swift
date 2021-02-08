@@ -1,5 +1,5 @@
 //
-//  StatCell.swift
+//  ThreeStatCell.swift
 //  Reference
 //
 //  Created by Alexey Davletshin on 06.02.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StatCell: UITableViewCell {
+class ThreeStatCell: UITableViewCell {
     
     @IBOutlet weak var leftLabel: UILabel!
     @IBOutlet weak var centerLabel: UILabel!

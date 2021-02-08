@@ -32,7 +32,7 @@ class ReferenceVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "StatCell", for: indexPath) as? StatCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeStatCell", for: indexPath) as? ThreeStatCell else {
             return UITableViewCell()
         }
         
