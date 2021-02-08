@@ -12,6 +12,7 @@ class DataVC: UIViewController {
     @IBOutlet weak var loadedCarsField: UITextField!
     @IBOutlet weak var emptyCarsField: UITextField!
     @IBOutlet weak var passengerCarsField: UITextField!
+    @IBOutlet weak var trainMassField: UITextField!
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "showReference" else { return }
@@ -21,8 +22,9 @@ class DataVC: UIViewController {
         let loadedCars = Int(self.loadedCarsField.text ?? "")
         let emptyCars = Int(self.emptyCarsField.text ?? "")
         let passengersCars = Int(self.passengerCarsField.text ?? "")
+        let trainMass = Int(self.trainMassField.text ?? "")
         
-        reference.calcStatTable(loadedCars: loadedCars, emptyCars: emptyCars, passengersCars: passengersCars)
+        reference.calcStatTable(loadedCars: loadedCars, emptyCars: emptyCars, passengersCars: passengersCars, trainMass: trainMass)
     }
     
 }
