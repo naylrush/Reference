@@ -231,7 +231,7 @@
                                     <outlet property="rightLabel" destination="ozn-lL-CD9" id="5cp-Kb-Ob2"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwoStatCell" id="N32-Zx-tqf">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwoStatCell" id="N32-Zx-tqf" customClass="TwoStatCell" customModule="Reference" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="151.33333206176758" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N32-Zx-tqf" id="seg-KI-GzS">
@@ -263,6 +263,10 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="Vkh-0W-s3p" secondAttribute="trailing" id="zf3-Eb-UyV"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="leftLabel" destination="ESl-nB-HPg" id="Tt1-xw-wrp"/>
+                                    <outlet property="rightLabel" destination="AeS-uR-g6L" id="My3-wI-hSo"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
