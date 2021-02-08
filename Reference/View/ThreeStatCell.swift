@@ -13,17 +13,6 @@ class ThreeStatCell: UITableViewCell {
     @IBOutlet weak var centerLabel: UILabel!
     @IBOutlet weak var rightLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     func refreshStat(_ stat: ThreeStat) {
         self.leftLabel.text = String(stat.brakePress)
         self.centerLabel.text = String(stat.axesCount)
