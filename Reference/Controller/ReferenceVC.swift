@@ -32,6 +32,8 @@ class ReferenceVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        typealias EmptyCell = UITableViewCell
+        
         let row = indexPath.row
         
         switch row {
@@ -51,8 +53,10 @@ class ReferenceVC: UITableViewController {
             cell.refreshInTotal(self.statTable.inTotal)
             
             return cell
+        case self.statTable.count + 1: // Empty
+            return EmptyCell()
         default:
-            return UITableViewCell()
+            return EmptyCell()
         }
     }
 
