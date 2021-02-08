@@ -10,6 +10,12 @@ import Foundation
 class StatTable {
     public private(set) var stats: [Stat] = []
     
+    public var count: Int {
+        get {
+            self.stats.count + 1
+        }
+    }
+    
     public var inTotal: (Int, Int) {
         get {
             let totalAxesCount = stats.reduce(0) { $0 + $1.axesCount }

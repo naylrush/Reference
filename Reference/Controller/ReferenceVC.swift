@@ -28,21 +28,32 @@ class ReferenceVC: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.statTable.stats.count + 1
+        return 1 + self.statTable.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeStatCell", for: indexPath) as? ThreeStatCell else {
+        let row = indexPath.row
+        
+        switch row {
+        case 0: // Title
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeStatTitleCell", for: indexPath)
+            
+            return cell
+        case 1..<self.statTable.count: // Stats
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeStatCell", for: indexPath) as! ThreeStatCell
+            
+            cell.refreshStat(self.statTable.stats[row - 1])
+            
+            return cell
+        case self.statTable.count: // Sum
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeStatCell", for: indexPath) as! ThreeStatCell
+        
+            cell.refreshInTotal(self.statTable.inTotal)
+            
+            return cell
+        default:
             return UITableViewCell()
         }
-        
-        if indexPath.row < self.statTable.stats.count {
-            cell.refreshStat(self.statTable.stats[indexPath.row])
-        } else {
-            cell.refreshInTotal(self.statTable.inTotal)
-        }
-        
-        return cell
     }
 
 }
