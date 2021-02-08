@@ -9,7 +9,7 @@ import UIKit
 
 class ReferenceVC: UITableViewController {
     
-    var statTable = StatTable()
+    var threeStatTable = ThreeStatTable()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ class ReferenceVC: UITableViewController {
                                                    (7.0, loadedCars, 4),
                                                    (10.0, passengersCars, 4)] {
             if cars != nil {
-                self.statTable.AddStat(Stat(brakePress: brakePress, axesCount: cars! * axesCountByCar))
+                threeStatTable.AddStat(ThreeStat(brakePress: brakePress, axesCount: cars! * axesCountByCar))
             }
         }
     }
@@ -28,7 +28,7 @@ class ReferenceVC: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1 + self.statTable.count
+        return 1 + threeStatTable.stats.count + 1
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,19 +41,19 @@ class ReferenceVC: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeStatTitleCell", for: indexPath)
             
             return cell
-        case 1..<self.statTable.count: // Stats
+        case ...threeStatTable.stats.count: // Stats
             let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeStatCell", for: indexPath) as! ThreeStatCell
             
-            cell.refreshStat(self.statTable.stats[row - 1])
+            cell.refreshStat(threeStatTable.stats[row - 1])
             
             return cell
-        case self.statTable.count: // Sum
+        case threeStatTable.stats.count + 1: // Sum
             let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeStatCell", for: indexPath) as! ThreeStatCell
         
-            cell.refreshInTotal(self.statTable.inTotal)
+            cell.refreshInTotal(threeStatTable.inTotal)
             
             return cell
-        case self.statTable.count + 1: // Empty
+        case threeStatTable.stats.count + 2: // Empty
             return EmptyCell()
         default:
             return EmptyCell()

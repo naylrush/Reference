@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Stat {
+struct ThreeStat {
     let brakePress: Double
     let axesCount: Int
     let pressingPads: Int

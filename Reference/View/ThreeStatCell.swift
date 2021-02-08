@@ -24,7 +24,7 @@ class ThreeStatCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func refreshStat(_ stat: Stat) {
+    func refreshStat(_ stat: ThreeStat) {
         self.leftLabel.text = String(stat.brakePress)
         self.centerLabel.text = String(stat.axesCount)
         self.rightLabel.text = String(stat.pressingPads)

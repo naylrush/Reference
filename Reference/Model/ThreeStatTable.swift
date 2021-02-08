@@ -7,14 +7,8 @@
 
 import Foundation
 
-class StatTable {
-    public private(set) var stats: [Stat] = []
-    
-    public var count: Int {
-        get {
-            self.stats.count + 1
-        }
-    }
+class ThreeStatTable {
+    public private(set) var stats: [ThreeStat] = []
     
     public var inTotal: (Int, Int) {
         get {
@@ -25,7 +19,7 @@ class StatTable {
         }
     }
     
-    func AddStat(_ stat: Stat) {
-        self.stats.append(stat)
+    func AddStat(_ stat: ThreeStat) {
+        stats.append(stat)
     }
 }
