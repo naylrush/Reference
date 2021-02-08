@@ -16,8 +16,8 @@ class ReferenceVC: UITableViewController {
     }
     
     func calcStatTable(loadedCars: Int?, emptyCars: Int?, passengersCars: Int?) {
-        for (brakePress, cars, axesCountByCar) in [(3.5, loadedCars, 4),
-                                                   (7.0, emptyCars, 4),
+        for (brakePress, cars, axesCountByCar) in [(3.5, emptyCars, 4),
+                                                   (7.0, loadedCars, 4),
                                                    (10.0, passengersCars, 4)] {
             if cars != nil {
                 self.statTable.AddStat(Stat(brakePress: brakePress, axesCount: cars! * axesCountByCar))
