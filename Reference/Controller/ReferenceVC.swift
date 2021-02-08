@@ -15,7 +15,7 @@ class ReferenceVC: UITableViewController {
         super.viewDidLoad()
     }
     
-    func calcStatTable(loadedCars: Int?, emptyCars: Int?, passengersCars: Int?, trainMass: Int?) {
+    func calcStatTables(loadedCars: Int?, emptyCars: Int?, passengersCars: Int?, trainMass: Int?) {
         for (brakePress, cars, axesCountByCar) in [(3.5, emptyCars, 4),
                                                    (7.0, loadedCars, 4),
                                                    (10.0, passengersCars, 4)] {
