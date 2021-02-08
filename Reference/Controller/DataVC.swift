@@ -9,11 +9,28 @@ import UIKit
 
 class DataVC: UIViewController {
     
+    @IBOutlet weak var calcReferenceButton: UIButton!
+    
+    var calcReferenceButtonActivated: Bool {
+        set(activate) {
+            print(activate)
+            calcReferenceButton.titleLabel?.isEnabled = activate
+            calcReferenceButton.isEnabled = activate
+        }
+        get {
+            return calcReferenceButton.isEnabled
+        }
+    }
+    
     @IBOutlet weak var loadedCarsField: UITextField!
     @IBOutlet weak var emptyCarsField: UITextField!
     @IBOutlet weak var passengerCarsField: UITextField!
     @IBOutlet weak var trainMassField: UITextField!
 
+    @IBAction func trainMassFieldEdited(_ sender: Any) {
+        calcReferenceButtonActivated = (trainMassField.text ?? "") != ""
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "showReference" else { return }
         
@@ -25,6 +42,10 @@ class DataVC: UIViewController {
         let trainMass = Int(self.trainMassField.text ?? "")
         
         reference.calcStatTables(emptyCars: emptyCars, loadedCars: loadedCars, passengersCars: passengersCars, trainMass: trainMass)
+    }
+    
+    override func viewDidLoad() {
+        calcReferenceButtonActivated = false
     }
     
 }

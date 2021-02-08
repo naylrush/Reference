@@ -85,6 +85,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                        <connections>
+                                                            <action selector="trainMassFieldEdited:" destination="HS7-SC-duV" eventType="editingChanged" id="0Ov-aD-osi"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -129,6 +132,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="calcReferenceButton" destination="ZCb-xu-Wrv" id="e2O-qs-z1P"/>
                         <outlet property="emptyCarsField" destination="Ngt-X5-SGb" id="DaQ-Cp-K0l"/>
                         <outlet property="loadedCarsField" destination="jCb-L5-Fll" id="Pk2-20-IiG"/>
                         <outlet property="passengerCarsField" destination="Aao-m5-jLr" id="uaf-CB-yex"/>
