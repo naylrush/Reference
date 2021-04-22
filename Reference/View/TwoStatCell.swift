@@ -8,13 +8,15 @@
 import UIKit
 
 class TwoStatCell: UITableViewCell {
-
     @IBOutlet weak var leftLabel: UILabel!
     @IBOutlet weak var rightLabel: UILabel!
     
     func refresh(_ stat: TwoStat) {
-        self.leftLabel.text = stat.name
-        self.rightLabel.text = String(stat.value)
+        refresh(stat.name, String(stat.value))
     }
-
+    
+    func refresh(_ left: String?, _ right: String?) {
+        self.leftLabel.text = left
+        self.rightLabel.text = right
+    }
 }

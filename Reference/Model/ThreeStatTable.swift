@@ -10,16 +10,22 @@ import Foundation
 class ThreeStatTable {
     public private(set) var stats: [ThreeStat] = []
     
-    public var inTotal: (Int, Int) {
+    public func AddStat(_ stat: ThreeStat) {
+        stats.append(stat)
+    }
+    
+    public struct Total {
+        let axesCount: Int
+        let pressingPads: Int
+    }
+    
+    public var inTotal: Total {
         get {
             let totalAxesCount = stats.reduce(0) { $0 + $1.axesCount }
             let totalPressingPads = stats.reduce(0) { $0 + $1.pressingPads }
             
-            return (totalAxesCount, totalPressingPads)
+            return Total(axesCount: totalAxesCount,
+                         pressingPads: totalPressingPads)
         }
-    }
-    
-    func AddStat(_ stat: ThreeStat) {
-        stats.append(stat)
     }
 }

@@ -8,29 +8,18 @@
 import UIKit
 
 class ReferenceVC: UITableViewController {
-    
     var threeStatTable = ThreeStatTable()
+    var twoStatTable = TwoStatTable()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    func calcStatTables(emptyCars: Int?, loadedCars: Int?, passengersCars: Int?, trainMass: Int?) {
-        // ThreeStatTable
-        for (brakePress, cars, axesCountByCar) in [(3.5, emptyCars, 4),
-                                                   (7.0, loadedCars, 4),
-                                                   (10.0, passengersCars, 4)] {
-            if cars != nil {
-                threeStatTable.AddStat(ThreeStat(brakePress: brakePress, axesCount: cars! * axesCountByCar))
-            }
-        }
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // ThreeStatTitle + ThreeStatTable + ThreeStatTable.InTotal
-        return 1 + threeStatTable.stats.count + 1
+        // ThreeStatTitle + ThreeStatTable + ThreeStatTable.InTotal + Empty + TwoStatTable
+        return 1 + threeStatTable.stats.count + 1 + 1 + twoStatTable.stats.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         typealias EmptyCell = UITableViewCell
         
@@ -43,7 +32,7 @@ class ReferenceVC: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeStatTitleCell", for: indexPath)
             
             return cell
-        case ...threeStatTable.stats.count: // Stats
+        case ...threeStatTable.stats.count: // ThreeStats
             let index = row - 1
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeStatCell", for: indexPath) as! ThreeStatCell
@@ -53,15 +42,23 @@ class ReferenceVC: UITableViewController {
             return cell
         case allThreeStatTableSize - 1: // Sum
             let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeStatCell", for: indexPath) as! ThreeStatCell
-        
-            cell.refreshInTotal(threeStatTable.inTotal)
+            
+            let total = threeStatTable.inTotal
+            cell.refreshInTotal(total.axesCount, total.pressingPads)
             
             return cell
         case allThreeStatTableSize: // Empty
             return EmptyCell()
+        case ...(allThreeStatTableSize + twoStatTable.stats.count): // TwoStats
+            let index = row - allThreeStatTableSize - 1
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TwoStatCell", for: indexPath) as! TwoStatCell
+            
+            cell.refresh(twoStatTable.stats[index])
+            
+            return cell
         default:
             return EmptyCell()
         }
     }
-
 }

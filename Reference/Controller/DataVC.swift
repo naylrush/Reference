@@ -8,45 +8,54 @@
 import UIKit
 
 class DataVC: UIViewController {
+    @IBOutlet weak var calcButton: UIButton!
     
-    @IBOutlet weak var calcReferenceButton: UIButton!
-    
-    var calcReferenceButtonActivated: Bool {
-        set(activate) {
-            print(activate)
-            calcReferenceButton.titleLabel?.isEnabled = activate
-            calcReferenceButton.isEnabled = activate
+    var calcButtonIsEnabled: Bool {
+        set(isEnabled) {
+            calcButton.titleLabel?.isEnabled = isEnabled
+            calcButton.isEnabled = isEnabled
         }
         get {
-            return calcReferenceButton.isEnabled
+            return calcButton.isEnabled
         }
+    }
+    
+    override func viewDidLoad() {
+        calcButtonIsEnabled = false
     }
     
     @IBOutlet weak var loadedCarsField: UITextField!
     @IBOutlet weak var emptyCarsField: UITextField!
     @IBOutlet weak var passengerCarsField: UITextField!
+    
     @IBOutlet weak var trainMassField: UITextField!
-
-    @IBAction func trainMassFieldEdited(_ sender: Any) {
-        calcReferenceButtonActivated = (trainMassField.text ?? "") != ""
+    
+    @IBAction func trainFieldEdited(_ sender: Any) {
+        let train = collectTrain()
+        calcButtonIsEnabled = !train.isEmpty() && train.mass > 0
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "showReference" else { return }
+        let train = collectTrain()
         
+        guard segue.identifier == "showReference" else { return }
         guard let reference = segue.destination as? ReferenceVC else { return }
         
-        let loadedCars = Int(self.loadedCarsField.text ?? "")
-        let emptyCars = Int(self.emptyCarsField.text ?? "")
-        let passengersCars = Int(self.passengerCarsField.text ?? "")
-        let trainMass = Int(self.trainMassField.text ?? "")
-        
-        reference.calcStatTables(emptyCars: emptyCars, loadedCars: loadedCars, passengersCars: passengersCars, trainMass: trainMass)
+        let builder = ReferenceVCBuilder(reference)
+        builder.calcStatTables(train)
     }
     
-    override func viewDidLoad() {
-        calcReferenceButtonActivated = false
+    private func collectTrain() -> Train {
+        return Train(
+            emptyCars: convertToInt(self.emptyCarsField.text),
+            loadedCars: convertToInt(self.loadedCarsField.text),
+            passengersCars: convertToInt(self.passengerCarsField.text),
+            mass: convertToInt(self.trainMassField.text)
+        )
     }
     
+    private func convertToInt(_ text: String?) -> Int {
+        return Int(text ?? "") ?? 0;
+    }
 }
 

@@ -61,6 +61,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue" enablesReturnKeyAutomatically="YES"/>
+                                                        <connections>
+                                                            <action selector="trainFieldEdited:" destination="HS7-SC-duV" eventType="editingChanged" id="34I-fD-8Th"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="jCb-L5-Fll" userLabel="Гружёные вагоны">
                                                         <rect key="frame" x="0.0" y="60" width="150" height="40"/>
@@ -69,6 +72,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue" enablesReturnKeyAutomatically="YES"/>
+                                                        <connections>
+                                                            <action selector="trainFieldEdited:" destination="HS7-SC-duV" eventType="editingChanged" id="csH-RU-FVu"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Aao-m5-jLr" userLabel="Пассажирские вагоны">
                                                         <rect key="frame" x="0.0" y="120" width="150" height="40"/>
@@ -77,6 +83,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                        <connections>
+                                                            <action selector="trainFieldEdited:" destination="HS7-SC-duV" eventType="editingChanged" id="0VT-Dr-jAU"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="GYs-xl-QVF" userLabel="Масса поезда">
                                                         <rect key="frame" x="0.0" y="180" width="150" height="40"/>
@@ -86,7 +95,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                         <connections>
-                                                            <action selector="trainMassFieldEdited:" destination="HS7-SC-duV" eventType="editingChanged" id="0Ov-aD-osi"/>
+                                                            <action selector="trainFieldEdited:" destination="HS7-SC-duV" eventType="editingChanged" id="0Ov-aD-osi"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -132,7 +141,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="calcReferenceButton" destination="ZCb-xu-Wrv" id="e2O-qs-z1P"/>
+                        <outlet property="calcButton" destination="ZCb-xu-Wrv" id="SRk-7j-gU4"/>
                         <outlet property="emptyCarsField" destination="Ngt-X5-SGb" id="DaQ-Cp-K0l"/>
                         <outlet property="loadedCarsField" destination="jCb-L5-Fll" id="Pk2-20-IiG"/>
                         <outlet property="passengerCarsField" destination="Aao-m5-jLr" id="uaf-CB-yex"/>
