@@ -21,7 +21,16 @@ class DataVC: UIViewController {
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         calcButtonIsEnabled = false
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(DataVC.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     @IBOutlet weak var loadedCarsField: UITextField!

@@ -26,8 +26,6 @@ class ReferenceVCBuilder {
     private func calcThreeStatTable(_ train: Train) -> ThreeStatTable {
         let threeStatTable = ThreeStatTable()
         
-        print(train)
-        
         for (brakePress, cars, axesCountByCar) in [(3.5, train.emptyCars, 4),
                                                    (7.0, train.loadedCars, 4),
                                                    (10.0, train.passengersCars, 4)] {
