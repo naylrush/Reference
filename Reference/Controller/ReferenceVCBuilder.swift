@@ -17,10 +17,11 @@ class ReferenceVCBuilder {
     
     func calcStatTables(_ train: Train) {
         let threeStatTable: ThreeStatTable = calcThreeStatTable(train)
-        let twoStatTable: TwoStatTable = calcTwoStatTable(train, threeStatTable.inTotal.pressingPads)
+        let (twoStatTable, locomotiveIsNeeded) = calcTwoStatTable(train, threeStatTable.inTotal.pressingPads)
         
         referenceVC.threeStatTable = threeStatTable
         referenceVC.twoStatTable = twoStatTable
+        referenceVC.locomotiveIsNeeded = locomotiveIsNeeded
     }
     
     private func calcThreeStatTable(_ train: Train) -> ThreeStatTable {
@@ -36,7 +37,7 @@ class ReferenceVCBuilder {
         return threeStatTable
     }
     
-    private func calcTwoStatTable(_ train: Train, _ availableBrakingForce: Int) -> TwoStatTable {
+    private func calcTwoStatTable(_ train: Train, _ availableBrakingForce: Int) -> (TwoStatTable, Bool) {
         let twoStatTable = TwoStatTable()
         
         var requiredBrakingForce: Int
@@ -54,14 +55,12 @@ class ReferenceVCBuilder {
             }
         }
         
-        if requiredBrakingForce > availableBrakingForce {
-            print("Turn on locomotive!")
-        }
-        
         twoStatTable.AddStat(TwoStat(name: "Масса поезда:", value: train.mass))
         twoStatTable.AddStat(TwoStat(name: "Требуемое ту:", value: requiredBrakingForce))
         
-        return twoStatTable
+        let locomotiveIsNeeded = requiredBrakingForce > availableBrakingForce
+        
+        return (twoStatTable, locomotiveIsNeeded)
     }
     
     private func calcRequiredBrakingForce(_ train: Train, _ coeff: Double) -> Int {

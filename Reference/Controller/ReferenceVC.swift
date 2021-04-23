@@ -11,8 +11,10 @@ class ReferenceVC: UITableViewController {
     var threeStatTable = ThreeStatTable()
     var twoStatTable = TwoStatTable()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    var locomotiveIsNeeded = false
+    
+    override func viewWillAppear(_ animated: Bool) {
+        alertLocomotiveIsNeeded()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,5 +62,37 @@ class ReferenceVC: UITableViewController {
         default:
             return EmptyCell()
         }
+    }
+    
+    private func alertLocomotiveIsNeeded() {
+        if (!locomotiveIsNeeded) {
+            return
+        }
+        
+        let alert = UIAlertController(
+            title: "Необходимо выбрать другой локомотив",
+            message: "Поезд тормазами не обеспечен",
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(
+            UIAlertAction(
+                title: "Выбрать",
+                style: .default,
+                handler: {_ in
+                    self.dismiss(animated: true)
+                }
+            )
+        )
+        
+        alert.addAction(
+            UIAlertAction(
+                title: "Нет",
+                style: .destructive,
+                handler: nil
+            )
+        )
+        
+        self.present(alert, animated: true)
     }
 }
