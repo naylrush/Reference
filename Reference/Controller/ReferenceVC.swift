@@ -8,60 +8,81 @@
 import UIKit
 
 class ReferenceVC: UITableViewController {
-    var threeStatTable = ThreeStatTable()
-    var twoStatTable = TwoStatTable()
+    var threeStats: [ThreeStat]!
+    var threeStatsInTotal: (axesCount: Int, brakingForce: Int)!
     
-    var locomotiveIsNeeded = false
+    var twoStats: [TwoStat]!
+    
+    var locomotiveIsNeeded: Bool!
     
     override func viewWillAppear(_ animated: Bool) {
         alertLocomotiveIsNeeded()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // ThreeStatTitle + ThreeStatTable + ThreeStatTable.InTotal + Empty + TwoStatTable
-        return 1 + threeStatTable.stats.count + 1 + 1 + twoStatTable.stats.count
+        // ThreeStatTitle + ThreeStats + InTotal(ThreeStats) + EmptyCell + TwoStats
+        return 1 + threeStats.count + 1 + 1 + twoStats.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         typealias EmptyCell = UITableViewCell
         
-        let allThreeStatTableSize = 1 + threeStatTable.stats.count + 1
+        let threeStatsRows = 1 + threeStats.count + 1
         
         let row = indexPath.row
         
         switch row {
-        case 0: // Title
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeStatTitleCell", for: indexPath)
-            
-            return cell
-        case ...threeStatTable.stats.count: // ThreeStats
+        case 0: // ThreeStatTitle
+            return getThreeStatTitleCell(indexPath)
+        case ...threeStats.count: // ThreeStats
             let index = row - 1
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeStatCell", for: indexPath) as! ThreeStatCell
-            
-            cell.refreshStat(threeStatTable.stats[index])
-            
-            return cell
-        case allThreeStatTableSize - 1: // Sum
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeStatCell", for: indexPath) as! ThreeStatCell
-            
-            let total = threeStatTable.inTotal
-            cell.refreshInTotal(total.axesCount, total.pressingPads)
+            let cell = getThreeCell(indexPath)
+            refreshThreeStatCell(cell, threeStats[index])
             
             return cell
-        case allThreeStatTableSize: // Empty
+        case threeStatsRows - 1: // InTotal(ThreeStats)
+            let cell = getThreeCell(indexPath)
+            
+            cell.refresh("Всего:", String(threeStatsInTotal.axesCount), String(threeStatsInTotal.brakingForce))
+            
+            return cell
+        case threeStatsRows: // EmptyCell
             return EmptyCell()
-        case ...(allThreeStatTableSize + twoStatTable.stats.count): // TwoStats
-            let index = row - allThreeStatTableSize - 1
+        case ...(threeStatsRows + twoStats.count): // TwoStats
+            let index = row - threeStatsRows - 1
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TwoStatCell", for: indexPath) as! TwoStatCell
-            
-            cell.refresh(twoStatTable.stats[index])
+            let cell = getTwoCell(indexPath)
+            refreshTwoStatCell(cell, twoStats[index])
             
             return cell
         default:
             return EmptyCell()
         }
+    }
+    
+    private func getThreeStatTitleCell(_ indexPath: IndexPath) -> UITableViewCell {
+        return tableView.dequeueReusableCell(withIdentifier: "ThreeStatTitleCell", for: indexPath)
+    }
+    
+    private func getThreeCell(_ indexPath: IndexPath) -> ThreeCell {
+        return tableView.dequeueReusableCell(withIdentifier: "ThreeCell", for: indexPath) as! ThreeCell
+    }
+    
+    private func refreshThreeStatCell(_ cell: ThreeCell, _ stat: ThreeStat) {
+        cell.refresh(String(stat.brakePress), String(stat.axesCount), String(stat.brakingForce))
+    }
+    
+    private func getTwoCell(_ indexPath: IndexPath) -> TwoCell {
+        return tableView.dequeueReusableCell(withIdentifier: "TwoCell", for: indexPath) as! TwoCell
+    }
+    
+    private func refreshTwoStatCell(_ cell: TwoCell, _ stat: TwoStat) {
+        cell.refresh(stat.name, String(stat.value))
+    }
+    
+    private func getEmptyCell() -> UITableViewCell {
+        return UITableViewCell()
     }
     
     private func alertLocomotiveIsNeeded() {

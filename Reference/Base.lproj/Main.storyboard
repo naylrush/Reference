@@ -200,7 +200,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThreeStatCell" id="1cd-HM-cVG" customClass="ThreeStatCell" customModule="Reference" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThreeCell" id="1cd-HM-cVG" userLabel="ThreeCell" customClass="ThreeCell" customModule="Reference" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="107.66666412353516" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1cd-HM-cVG" id="mvI-dl-rhJ">
@@ -244,7 +244,7 @@
                                     <outlet property="rightLabel" destination="ozn-lL-CD9" id="5cp-Kb-Ob2"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwoStatCell" id="N32-Zx-tqf" customClass="TwoStatCell" customModule="Reference" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwoCell" id="N32-Zx-tqf" userLabel="TwoCell" customClass="TwoCell" customModule="Reference" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="151.33333206176758" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N32-Zx-tqf" id="seg-KI-GzS">
