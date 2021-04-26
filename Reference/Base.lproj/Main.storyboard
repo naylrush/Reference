@@ -147,6 +147,10 @@
                         <outlet property="loadedCarsField" destination="jCb-L5-Fll" id="Pk2-20-IiG"/>
                         <outlet property="passengerCarsField" destination="Aao-m5-jLr" id="uaf-CB-yex"/>
                         <outlet property="trainMassField" destination="GYs-xl-QVF" id="1RC-mn-MFX"/>
+                        <outletCollection property="trainFields" destination="GYs-xl-QVF" collectionClass="NSMutableArray" id="N9K-pr-qd3"/>
+                        <outletCollection property="trainFields" destination="Aao-m5-jLr" collectionClass="NSMutableArray" id="on6-9R-F9z"/>
+                        <outletCollection property="trainFields" destination="jCb-L5-Fll" collectionClass="NSMutableArray" id="UKx-YL-gZk"/>
+                        <outletCollection property="trainFields" destination="Ngt-X5-SGb" collectionClass="NSMutableArray" id="sqj-c2-oCk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PtW-GM-jmU" userLabel="First Responder" sceneMemberID="firstResponder"/>

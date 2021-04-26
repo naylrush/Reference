@@ -8,7 +8,9 @@
 import UIKit
 
 class DataVC: UIViewController, UITextFieldDelegate {
-    @IBOutlet weak var calcButton: UIButton!
+    @IBOutlet weak var calcButton: UIButton! {
+        didSet { calcButtonIsEnabled = false }
+    }
     
     var calcButtonIsEnabled: Bool {
         set(isEnabled) {
@@ -25,9 +27,9 @@ class DataVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passengerCarsField: UITextField!
     @IBOutlet weak var trainMassField: UITextField!
     
-    @IBOutlet var textFields: [UITextField]! {
+    @IBOutlet var trainFields: [UITextField]! {
         didSet {
-            textFields.forEach() { $0.addPrevNextDoneToolbar() }
+            trainFields.forEach() { $0.addPrevNextDoneToolbar() }
         }
     }
     
@@ -38,8 +40,6 @@ class DataVC: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        calcButtonIsEnabled = false
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(DataVC.dismissKeyboard))
         view.addGestureRecognizer(tap)
