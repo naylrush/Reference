@@ -9,7 +9,7 @@ import Foundation
 
 
 class ReferenceVCBuilder {
-    var referenceVC: ReferenceVC
+    let referenceVC: ReferenceVC
     
     init(_ referenceVC: ReferenceVC) {
         self.referenceVC = referenceVC
@@ -32,13 +32,14 @@ class ReferenceVCBuilder {
     private func calcThreeStats(_ train: Train) -> [ThreeStat] {
         var threeStats = [ThreeStat]()
         
-        for (brakePress, cars, axesCountByCar) in [(3.5, train.emptyCars, 4),
-                                                   (7.0, train.loadedCars, 4),
-                                                   (10.0, train.passengersCars, 4)] {
-            if cars > 0 {
-                threeStats.append(ThreeStat(brakePress: brakePress, axesCount: cars * axesCountByCar))
+        train.cars
+            .sorted() { $0.car.brakePress < $1.car.brakePress }
+            .forEach() {
+                if $0.count > 0 {
+                    threeStats.append(ThreeStat(brakePress: $0.car.brakePress, axesCount: $0.count * $0.car.axesCount))
+                }
             }
-        }
+        
         return threeStats
     }
     
@@ -54,7 +55,7 @@ class ReferenceVCBuilder {
         
         var requiredBrakingForce: Int!
         
-        if train.hasOnlyEmptyCars() {
+        if train.hasOnlyEmptyCars {
             let coeff = 0.55
             requiredBrakingForce = calcRequiredBrakingForce(train, coeff)
         } else {

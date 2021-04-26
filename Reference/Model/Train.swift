@@ -8,23 +8,18 @@
 import Foundation
 
 struct Train {
-    var emptyCars: Int
-    var loadedCars: Int
-    var passengersCars: Int
+    var cars: [(count: Int, car: Car)]
+    var hasOnlyEmptyCars: Bool
     
     var mass: Int
     
     var count: Int {
         get {
-            return emptyCars + loadedCars + passengersCars
+            return cars.reduce(0) { $0 + $1.count }
         }
     }
     
     public func isEmpty() -> Bool {
-        return emptyCars == 0 && loadedCars == 0 && passengersCars == 0
-    }
-    
-    public func hasOnlyEmptyCars() -> Bool {
-        return emptyCars > 0 && loadedCars == 0 && passengersCars == 0
+        return cars.isEmpty
     }
 }

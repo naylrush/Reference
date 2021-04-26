@@ -60,10 +60,17 @@ class DataVC: UIViewController, UITextFieldDelegate {
     }
     
     private func collectTrain() -> Train {
+        let emptyCars = convertToInt(self.emptyCarsField.text)
+        let loadedCars = convertToInt(self.loadedCarsField.text)
+        let passengerCars = convertToInt(self.passengerCarsField.text)
+        
         return Train(
-            emptyCars: convertToInt(self.emptyCarsField.text),
-            loadedCars: convertToInt(self.loadedCarsField.text),
-            passengersCars: convertToInt(self.passengerCarsField.text),
+            cars: [
+                (emptyCars, Car(brakePress: 3.5, axesCount: 4)),
+                (loadedCars, Car(brakePress: 7.0, axesCount: 4)),
+                (passengerCars, Car(brakePress: 10.0, axesCount: 4)),
+            ],
+            hasOnlyEmptyCars: loadedCars == 0 && passengerCars == 0,
             mass: convertToInt(self.trainMassField.text)
         )
     }
