@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DataVC: UIViewController, UITextFieldDelegate {
+class DataVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var calcButton: UIButton! {
         didSet { calcButtonIsEnabled = false }
     }
@@ -22,6 +22,16 @@ class DataVC: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBOutlet weak var locomotiveButton: UIButton!
+    @IBAction func locomotiveButtonTapped(_ sender: Any) {
+        dismissKeyboard()
+        locomotivePicker.isHidden = false
+    }
+    
+    @IBOutlet weak var locomotivePicker: UIPickerView! {
+        didSet { locomotivePicker.isHidden = true }
+    }
+    
     @IBOutlet weak var loadedCarsField: UITextField!
     @IBOutlet weak var emptyCarsField: UITextField!
     @IBOutlet weak var passengerCarsField: UITextField!
@@ -33,20 +43,68 @@ class DataVC: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func trainFieldBeginEditing(_ sender: Any) {
+        locomotivePicker.isHidden = true
+    }
+    
     @IBAction func trainFieldEdited(_ sender: Any) {
         let train = collectTrain()
         calcButtonIsEnabled = !train.isEmpty() && train.mass > 0
     }
     
+    private var locomotives: [Locomotive?] = [
+        nil,
+        Locomotive("2М62", mass: 120, Car(brakePress: 11.0, axesCount: 6)),
+        Locomotive("ЧМЭ3", mass: 123, Car(brakePress: 11.0, axesCount: 6)),
+        Locomotive("ВЛ10", mass: 182, Car(brakePress: 11.0, axesCount: 8)),
+        Locomotive("ВЛ10У", mass: 184, Car(brakePress: 11.0, axesCount: 8)),
+        Locomotive("ВЛ11", mass: 184, Car(brakePress: 11.0, axesCount: 8)),
+    ]
+    
+    private var pickedLocomotive: Locomotive?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(DataVC.dismissKeyboard))
+        locomotivePicker.delegate = self
+        locomotivePicker.dataSource = self
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(endEditing))
         view.addGestureRecognizer(tap)
     }
     
-    @objc func dismissKeyboard() {
+    func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    @objc func endEditing() {
+        dismissKeyboard()
+        locomotivePicker.isHidden = true
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return locomotives.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if let locomotive = locomotives[row] {
+            return "\(locomotive.name) — \(locomotive.mass)т, \(locomotive.car.axesCount) осей"
+        } else {
+            return "Нет"
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        pickedLocomotive = locomotives[row]
+        
+        let newTitle = NSMutableAttributedString(attributedString: locomotiveButton.attributedTitle(for: .normal)!)
+        newTitle.mutableString.setString(pickedLocomotive?.name ?? "Нет")
+        
+        locomotiveButton.setAttributedTitle(newTitle, for: .normal)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -64,15 +122,28 @@ class DataVC: UIViewController, UITextFieldDelegate {
         let loadedCars = convertToInt(self.loadedCarsField.text)
         let passengerCars = convertToInt(self.passengerCarsField.text)
         
-        return Train(
-            cars: [
-                (emptyCars, Car(brakePress: 3.5, axesCount: 4)),
-                (loadedCars, Car(brakePress: 7.0, axesCount: 4)),
-                (passengerCars, Car(brakePress: 10.0, axesCount: 4)),
-            ],
-            hasOnlyEmptyCars: loadedCars == 0 && passengerCars == 0,
-            mass: convertToInt(self.trainMassField.text)
-        )
+        var mass = convertToInt(self.trainMassField.text)
+        
+        var cars = [(count: Int, car: Car)]()
+        
+        if emptyCars > 0 {
+            cars.append((emptyCars, Car(brakePress: 3.5, axesCount: 4)))
+        }
+        if loadedCars > 0 {
+            cars.append((loadedCars, Car(brakePress: 7.0, axesCount: 4)))
+        }
+        if passengerCars > 0 {
+            cars.append((passengerCars, Car(brakePress: 10.0, axesCount: 4)))
+        }
+        
+        if let locomotive = pickedLocomotive {
+            cars.append((1, locomotive.car))
+            mass += locomotive.mass
+        }
+        
+        let hasOnlyEmptyCars = (pickedLocomotive == nil && loadedCars == 0 && passengerCars == 0)
+        
+        return Train(cars: cars, hasOnlyEmptyCars: hasOnlyEmptyCars, mass: mass)
     }
     
     private func convertToInt(_ text: String?) -> Int {

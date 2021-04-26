@@ -35,9 +35,9 @@ class ReferenceVCBuilder {
         train.cars
             .sorted() { $0.car.brakePress < $1.car.brakePress }
             .forEach() {
-                if $0.count > 0 {
-                    threeStats.append(ThreeStat(brakePress: $0.car.brakePress, axesCount: $0.count * $0.car.axesCount))
-                }
+                threeStats.append(
+                    ThreeStat(brakePress: $0.car.brakePress, axesCount: $0.count * $0.car.axesCount)
+                )
             }
         
         return threeStats
