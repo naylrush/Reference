@@ -15,21 +15,21 @@ class ReferenceVCBuilder {
         self.referenceVC = referenceVC
     }
     
-    func calcStatTables(_ train: Train) {
-        let threeStats = calcThreeStatTable(train)
+    func calcStats(_ train: Train) {
+        let threeStats = calcThreeStats(train)
         let threeStatsInTotal = calcInTotal(threeStats)
         
         referenceVC.threeStats = threeStats
         referenceVC.threeStatsInTotal = threeStatsInTotal
         
-        let (twoStats, locomotiveIsNeeded) = calcTwoStatTable(train, threeStatsInTotal.brakingForce)
+        let (twoStats, locomotiveIsNeeded) = calcTwoStats(train, threeStatsInTotal.brakingForce)
         
         referenceVC.twoStats = twoStats
         
         referenceVC.locomotiveIsNeeded = locomotiveIsNeeded
     }
     
-    private func calcThreeStatTable(_ train: Train) -> [ThreeStat] {
+    private func calcThreeStats(_ train: Train) -> [ThreeStat] {
         var threeStats = [ThreeStat]()
         
         for (brakePress, cars, axesCountByCar) in [(3.5, train.emptyCars, 4),
@@ -49,7 +49,7 @@ class ReferenceVCBuilder {
         return (totalAxesCount, totalBrakingForce)
     }
     
-    private func calcTwoStatTable(_ train: Train, _ availableBrakingForce: Int) -> ([TwoStat], Bool) {
+    private func calcTwoStats(_ train: Train, _ availableBrakingForce: Int) -> ([TwoStat], Bool) {
         var twoStats = [TwoStat]()
         
         var requiredBrakingForce: Int

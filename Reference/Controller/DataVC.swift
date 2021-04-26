@@ -63,7 +63,7 @@ class DataVC: UIViewController, UITextFieldDelegate {
         guard let reference = segue.destination as? ReferenceVC else { return }
         
         let builder = ReferenceVCBuilder(reference)
-        builder.calcStatTables(train)
+        builder.calcStats(train)
     }
     
     private func collectTrain() -> Train {
