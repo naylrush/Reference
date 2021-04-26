@@ -54,46 +54,46 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Sfn-zV-yLx" userLabel="Количество">
                                                 <rect key="frame" x="186.33333333333331" y="0.0" width="176.33333333333331" height="220"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Ngt-X5-SGb" userLabel="Порожние вагоны">
+                                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Ngt-X5-SGb" userLabel="Порожние вагоны">
                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="150" id="Cis-N3-Stq"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue" enablesReturnKeyAutomatically="YES"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue"/>
                                                         <connections>
                                                             <action selector="trainFieldEdited:" destination="HS7-SC-duV" eventType="editingChanged" id="34I-fD-8Th"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="jCb-L5-Fll" userLabel="Гружёные вагоны">
+                                                    <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="jCb-L5-Fll" userLabel="Гружёные вагоны">
                                                         <rect key="frame" x="0.0" y="60" width="150" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="150" id="cGj-GH-9eY"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue" enablesReturnKeyAutomatically="YES"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue"/>
                                                         <connections>
                                                             <action selector="trainFieldEdited:" destination="HS7-SC-duV" eventType="editingChanged" id="csH-RU-FVu"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Aao-m5-jLr" userLabel="Пассажирские вагоны">
+                                                    <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Aao-m5-jLr" userLabel="Пассажирские вагоны">
                                                         <rect key="frame" x="0.0" y="120" width="150" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="150" id="O4y-Qu-btI"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue"/>
                                                         <connections>
                                                             <action selector="trainFieldEdited:" destination="HS7-SC-duV" eventType="editingChanged" id="0VT-Dr-jAU"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="GYs-xl-QVF" userLabel="Масса поезда">
+                                                    <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="GYs-xl-QVF" userLabel="Масса поезда">
                                                         <rect key="frame" x="0.0" y="180" width="150" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="150" id="bO4-CP-dN4"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                                         <connections>
                                                             <action selector="trainFieldEdited:" destination="HS7-SC-duV" eventType="editingChanged" id="0Ov-aD-osi"/>
                                                         </connections>
