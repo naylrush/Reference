@@ -20,17 +20,15 @@ class DataVC: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @IBOutlet weak var loadedCarsField: UITextField! {
-        didSet { loadedCarsField.addPrevNextDoneToolbar() }
-    }
-    @IBOutlet weak var emptyCarsField: UITextField! {
-        didSet { emptyCarsField.addPrevNextDoneToolbar() }
-    }
-    @IBOutlet weak var passengerCarsField: UITextField! {
-        didSet { passengerCarsField.addPrevNextDoneToolbar() }
-    }
-    @IBOutlet weak var trainMassField: UITextField! {
-        didSet { trainMassField.addPrevNextDoneToolbar() }
+    @IBOutlet weak var loadedCarsField: UITextField!
+    @IBOutlet weak var emptyCarsField: UITextField!
+    @IBOutlet weak var passengerCarsField: UITextField!
+    @IBOutlet weak var trainMassField: UITextField!
+    
+    @IBOutlet var textFields: [UITextField]! {
+        didSet {
+            textFields.forEach() { $0.addPrevNextDoneToolbar() }
+        }
     }
     
     @IBAction func trainFieldEdited(_ sender: Any) {
@@ -42,10 +40,6 @@ class DataVC: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         calcButtonIsEnabled = false
-        
-        for textField in [loadedCarsField, emptyCarsField, passengerCarsField, trainMassField] {
-            textField?.delegate = self
-        }
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(DataVC.dismissKeyboard))
         view.addGestureRecognizer(tap)
