@@ -14,6 +14,12 @@ struct Train {
     
     var mass: Int
     
+    var count: Int {
+        get {
+            return emptyCars + loadedCars + passengersCars
+        }
+    }
+    
     public func isEmpty() -> Bool {
         return emptyCars == 0 && loadedCars == 0 && passengersCars == 0
     }

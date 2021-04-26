@@ -52,24 +52,27 @@ class ReferenceVCBuilder {
     private func calcTwoStats(_ train: Train, _ availableBrakingForce: Int) -> ([TwoStat], Bool) {
         var twoStats = [TwoStat]()
         
-        var requiredBrakingForce: Int
+        var requiredBrakingForce: Int!
         
         if train.hasOnlyEmptyCars() {
             let coeff = 0.55
             requiredBrakingForce = calcRequiredBrakingForce(train, coeff)
         } else {
-            var coeff = 0.33
-            requiredBrakingForce = calcRequiredBrakingForce(train, coeff)
-            
-            while (requiredBrakingForce > availableBrakingForce && coeff >= 0.28) {
-                coeff -= 0.01
+            for coeff in stride(from: 0.28, to: 0.33, by: 0.01).reversed() {
                 requiredBrakingForce = calcRequiredBrakingForce(train, coeff)
+                if (requiredBrakingForce > availableBrakingForce) {
+                    break
+                }
             }
         }
         
+        let (requiredHandbrakeCount, availableHandbrakeCount) = calchandbrakeStats(train)
+        
         twoStats.append(TwoStat(name: "Масса поезда:", value: train.mass))
-        twoStats.append(TwoStat(name: "Распол. ту:", value: availableBrakingForce))
-        twoStats.append(TwoStat(name: "Требуемое ту:", value: requiredBrakingForce))
+        twoStats.append(TwoStat(name: "Требуемое ТУ:", value: requiredBrakingForce))
+        twoStats.append(TwoStat(name: "Распол. ТУ:", value: availableBrakingForce))
+        twoStats.append(TwoStat(name: "Требуемые РТ:", value: requiredHandbrakeCount))
+        twoStats.append(TwoStat(name: "Распол. РТ:", value: availableHandbrakeCount))
         
         let locomotiveIsNeeded = requiredBrakingForce > availableBrakingForce
         
@@ -78,5 +81,13 @@ class ReferenceVCBuilder {
     
     private func calcRequiredBrakingForce(_ train: Train, _ coeff: Double) -> Int {
         return Int(ceil(Double(train.mass) * coeff))
+    }
+    
+    private func calchandbrakeStats(_ train: Train) -> (requiredHandbrakeCount: Int, availableHandbrakeCount: Int) {
+        let handbrakeCount = Int(ceil(Double(train.mass) * 0.006))
+        let half = (train.count + 1) / 2
+        let availableHandbrakeCount = (half + (half % 2)) * 4
+        
+        return (handbrakeCount, availableHandbrakeCount)
     }
 }
