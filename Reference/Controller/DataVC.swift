@@ -43,10 +43,9 @@ class DataVC: UIViewController, UITextFieldDelegate {
         
         calcButtonIsEnabled = false
         
-        loadedCarsField.delegate = self
-        emptyCarsField.delegate = self
-        passengerCarsField.delegate = self
-        trainMassField.delegate = self
+        for textField in [loadedCarsField, emptyCarsField, passengerCarsField, trainMassField] {
+            textField?.delegate = self
+        }
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(DataVC.dismissKeyboard))
         view.addGestureRecognizer(tap)
