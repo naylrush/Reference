@@ -59,11 +59,13 @@ class ReferenceVCBuilder {
             let coeff = 0.55
             requiredBrakingForce = calcRequiredBrakingForce(train, coeff)
         } else {
-            for coeff in stride(from: 0.28, to: 0.33, by: 0.01).reversed() {
+            var coeff = 0.33
+            while coeff >= 0.28 {
                 requiredBrakingForce = calcRequiredBrakingForce(train, coeff)
-                if (requiredBrakingForce > availableBrakingForce) {
+                if (requiredBrakingForce < availableBrakingForce) {
                     break
                 }
+                coeff -= 0.01
             }
         }
         
