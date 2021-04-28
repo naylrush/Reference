@@ -18,55 +18,55 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXJ-Vo-vCC">
-                                <rect key="frame" x="0.0" y="90" width="414" height="346"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="332.66666666666669"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Af6-Hl-ZuS" userLabel="Количество вагонов">
-                                        <rect key="frame" x="25.666666666666657" y="0.0" width="362.66666666666674" height="290"/>
+                                        <rect key="frame" x="39.666666666666657" y="0.0" width="334.66666666666674" height="276.66666666666669"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EKs-w6-3KC" userLabel="Вагоны">
-                                                <rect key="frame" x="0.0" y="0.0" width="176.33333333333334" height="290"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="162.33333333333334" height="276.66666666666669"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Порожние:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3Q-0F-WGj" userLabel="Порожние">
-                                                        <rect key="frame" x="50.999999999999993" y="0.0" width="125.33333333333331" height="42"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <rect key="frame" x="47.000000000000007" y="0.0" width="115.33333333333334" height="39.333333333333336"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Гружёные:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mm2-4L-28A" userLabel="Гружёные">
-                                                        <rect key="frame" x="56.999999999999993" y="62" width="119.33333333333331" height="42"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <rect key="frame" x="52.000000000000007" y="59.333333333333329" width="110.33333333333334" height="39.333333333333329"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пассажирские:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nra-MY-sdP" userLabel="Пассажирские">
-                                                        <rect key="frame" x="0.0" y="124" width="176.33333333333334" height="42"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <rect key="frame" x="0.0" y="118.66666666666664" width="162.33333333333334" height="39.333333333333329"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Масса вагонов:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmt-wj-cxN" userLabel="Масса вагонов">
-                                                        <rect key="frame" x="1" y="186" width="175.33333333333334" height="42"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <rect key="frame" x="0.6666666666666714" y="178" width="161.66666666666663" height="39.333333333333343"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Локомотив:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYf-Oa-KPW" userLabel="Локомотив">
-                                                        <rect key="frame" x="44" y="248" width="132.33333333333334" height="42"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <rect key="frame" x="40.666666666666664" y="237.33333333333334" width="121.66666666666669" height="39.333333333333343"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Sfn-zV-yLx" userLabel="Количество">
-                                                <rect key="frame" x="186.33333333333331" y="0.0" width="176.33333333333331" height="290"/>
+                                                <rect key="frame" x="172.33333333333331" y="0.0" width="162.33333333333331" height="276.66666666666669"/>
                                                 <subviews>
                                                     <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Ngt-X5-SGb" userLabel="Порожние вагоны">
-                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="42"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="39.333333333333336"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="150" id="Cis-N3-Stq"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue"/>
                                                         <connections>
                                                             <action selector="trainFieldBeginEditing:" destination="HS7-SC-duV" eventType="editingDidEnd" id="cb4-a1-luJ"/>
@@ -74,11 +74,11 @@
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="jCb-L5-Fll" userLabel="Гружёные вагоны">
-                                                        <rect key="frame" x="0.0" y="62" width="150" height="42"/>
+                                                        <rect key="frame" x="0.0" y="59.333333333333329" width="150" height="39.333333333333329"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="150" id="cGj-GH-9eY"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue"/>
                                                         <connections>
                                                             <action selector="trainFieldBeginEditing:" destination="HS7-SC-duV" eventType="editingDidEnd" id="TaM-tw-0qd"/>
@@ -86,11 +86,11 @@
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Aao-m5-jLr" userLabel="Пассажирские вагоны">
-                                                        <rect key="frame" x="0.0" y="124" width="150" height="42"/>
+                                                        <rect key="frame" x="0.0" y="118.66666666666664" width="150" height="39.333333333333329"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="150" id="O4y-Qu-btI"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue"/>
                                                         <connections>
                                                             <action selector="trainFieldBeginEditing:" destination="HS7-SC-duV" eventType="editingDidEnd" id="The-Cc-vVC"/>
@@ -98,19 +98,19 @@
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="GYs-xl-QVF" userLabel="Масса поезда">
-                                                        <rect key="frame" x="0.0" y="186" width="150" height="42"/>
+                                                        <rect key="frame" x="0.0" y="178" width="150" height="39.333333333333343"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="150" id="bO4-CP-dN4"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                                         <connections>
                                                             <action selector="trainFieldBeginEditing:" destination="HS7-SC-duV" eventType="editingDidBegin" id="g3z-RJ-1WR"/>
                                                             <action selector="trainFieldEdited:" destination="HS7-SC-duV" eventType="editingChanged" id="0Ov-aD-osi"/>
                                                         </connections>
                                                     </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3kZ-Xx-kyK" userLabel="Локомотив">
-                                                        <rect key="frame" x="0.0" y="248" width="150" height="42"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3kZ-Xx-kyK" userLabel="Локомотив" customClass="DesignableButton" customModule="Reference" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="237.33333333333334" width="150" height="39.333333333333343"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="150" id="ZvP-Bg-eOS"/>
@@ -119,16 +119,22 @@
                                                             <attributedString key="attributedTitle">
                                                                 <fragment content="Нет">
                                                                     <attributes>
-                                                                        <color key="NSColor" name="CalcReferenceTitleColor"/>
-                                                                        <font key="NSFont" metaFont="system" size="25"/>
+                                                                        <color key="NSColor" name="CalcButtonTitle"/>
+                                                                        <font key="NSFont" metaFont="system" size="23"/>
                                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="7" tighteningFactorForTruncation="0.0"/>
                                                                     </attributes>
                                                                 </fragment>
                                                             </attributedString>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" name="LocomotiveButtonBackground"/>
+                                                            </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <integer key="value" value="5"/>
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="4"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
@@ -145,20 +151,23 @@
                                             <constraint firstAttribute="bottom" secondItem="Sfn-zV-yLx" secondAttribute="bottom" id="up5-lQ-Glq"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCb-xu-Wrv">
-                                        <rect key="frame" x="107" y="310" width="200" height="36"/>
-                                        <color key="backgroundColor" name="CalcReferenceBackgroundColor"/>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCb-xu-Wrv" customClass="DesignableButton" customModule="Reference" customModuleProvider="target">
+                                        <rect key="frame" x="107" y="296.66666666666669" width="200" height="36"/>
+                                        <color key="backgroundColor" name="CalcButtonBackground"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="05f-or-SZK"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="4ST-07-zDV"/>
                                             <constraint firstAttribute="height" constant="36" id="VHO-Ls-dkG"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <state key="normal" title="Составить справку">
-                                            <color key="titleColor" name="CalcReferenceTitleColor"/>
+                                            <color key="titleColor" name="CalcButtonTitle"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <integer key="value" value="5"/>
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" name="CalcButtonBackground"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -174,11 +183,11 @@
                         <viewLayoutGuide key="safeArea" id="g4l-lg-tKN"/>
                         <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="g4l-lg-tKN" firstAttribute="bottom" secondItem="xDT-cC-TUb" secondAttribute="bottom" constant="50" id="A7d-Os-czj"/>
                             <constraint firstItem="g4l-lg-tKN" firstAttribute="trailing" secondItem="xDT-cC-TUb" secondAttribute="trailing" id="RDf-QW-7V5"/>
                             <constraint firstItem="cXJ-Vo-vCC" firstAttribute="centerX" secondItem="g4l-lg-tKN" secondAttribute="centerX" id="WKu-lA-eSF"/>
-                            <constraint firstItem="cXJ-Vo-vCC" firstAttribute="top" secondItem="g4l-lg-tKN" secondAttribute="top" constant="90" id="bNs-4V-foX"/>
+                            <constraint firstItem="cXJ-Vo-vCC" firstAttribute="top" secondItem="g4l-lg-tKN" secondAttribute="top" constant="50" id="bNs-4V-foX"/>
                             <constraint firstItem="xDT-cC-TUb" firstAttribute="leading" secondItem="g4l-lg-tKN" secondAttribute="leading" id="eOo-g6-ofs"/>
+                            <constraint firstItem="g4l-lg-tKN" firstAttribute="bottom" secondItem="xDT-cC-TUb" secondAttribute="bottom" constant="50" id="l7G-lZ-yXg"/>
                             <constraint firstItem="g4l-lg-tKN" firstAttribute="trailing" secondItem="cXJ-Vo-vCC" secondAttribute="trailing" id="paF-ea-bLw"/>
                             <constraint firstItem="cXJ-Vo-vCC" firstAttribute="leading" secondItem="g4l-lg-tKN" secondAttribute="leading" id="ze7-9k-XXg"/>
                         </constraints>
@@ -211,30 +220,30 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThreeStatTitleCell" id="yge-WQ-zUM">
-                                <rect key="frame" x="0.0" y="28" width="414" height="79.666664123535156"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="76.333335876464844"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yge-WQ-zUM" id="iri-mI-rPZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="79.666664123535156"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="76.333335876464844"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="mDg-Xc-IPk">
-                                            <rect key="frame" x="20" y="10.999999999999996" width="374" height="57.666666666666657"/>
+                                            <rect key="frame" x="20" y="11.000000000000004" width="374" height="54.333333333333343"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тормозное нажатие на ось, тс" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUI-dV-oDg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="91.333333333333329" height="57.666666666666664"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="91.333333333333329" height="54.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество осей" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kz2-Xh-NzR">
-                                                    <rect key="frame" x="141.33333333333334" y="0.0" width="91.333333333333343" height="57.666666666666664"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <rect key="frame" x="141.33333333333334" y="0.0" width="91.333333333333343" height="54.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нажатие колодок, тс" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o57-eG-V8G">
-                                                    <rect key="frame" x="282.66666666666669" y="0.0" width="91.333333333333314" height="57.666666666666664"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <rect key="frame" x="282.66666666666669" y="0.0" width="91.333333333333314" height="54.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -250,30 +259,30 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThreeCell" id="1cd-HM-cVG" userLabel="ThreeCell" customClass="ThreeCell" customModule="Reference" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="107.66666412353516" width="414" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="104.33333587646484" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1cd-HM-cVG" id="mvI-dl-rhJ">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="HnK-EM-htP">
-                                            <rect key="frame" x="20" y="7" width="374" height="30"/>
+                                            <rect key="frame" x="20" y="8.0000000000000018" width="374" height="27.666666666666671"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFC-8l-78Q">
-                                                    <rect key="frame" x="0.0" y="0.0" width="91.333333333333329" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left" textAlignment="right" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFC-8l-78Q">
+                                                    <rect key="frame" x="0.0" y="0.0" width="91.333333333333329" height="27.666666666666668"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Center" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAi-sT-Q6h">
-                                                    <rect key="frame" x="141.33333333333334" y="0.0" width="91.333333333333343" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Center" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAi-sT-Q6h">
+                                                    <rect key="frame" x="141.33333333333334" y="0.0" width="91.333333333333343" height="27.666666666666668"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozn-lL-CD9">
-                                                    <rect key="frame" x="282.66666666666669" y="0.0" width="91.333333333333314" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozn-lL-CD9">
+                                                    <rect key="frame" x="282.66666666666669" y="0.0" width="91.333333333333314" height="27.666666666666668"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -294,24 +303,24 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwoCell" id="N32-Zx-tqf" userLabel="TwoCell" customClass="TwoCell" customModule="Reference" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="151.33333206176758" width="414" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="148.00000381469727" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N32-Zx-tqf" id="seg-KI-GzS">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Vkh-0W-s3p">
-                                            <rect key="frame" x="20" y="7" width="374" height="30"/>
+                                            <rect key="frame" x="20" y="8.0000000000000018" width="374" height="27.666666666666671"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left" textAlignment="right" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESl-nB-HPg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="167" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="167" height="27.666666666666668"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeS-uR-g6L">
-                                                    <rect key="frame" x="207" y="0.0" width="167" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeS-uR-g6L">
+                                                    <rect key="frame" x="207" y="0.0" width="167" height="27.666666666666668"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -345,12 +354,23 @@
             <point key="canvasLocation" x="1077" y="53"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="3kZ-Xx-kyK">
+            <size key="intrinsicContentSize" width="39" height="39.333333333333336"/>
+        </designable>
+        <designable name="ZCb-xu-Wrv">
+            <size key="intrinsicContentSize" width="183" height="38"/>
+        </designable>
+    </designables>
     <resources>
-        <namedColor name="CalcReferenceBackgroundColor">
+        <namedColor name="CalcButtonBackground">
             <color red="0.83700001239776611" green="0.83700001239776611" blue="0.83700001239776611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="CalcReferenceTitleColor">
+        <namedColor name="CalcButtonTitle">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LocomotiveButtonBackground">
+            <color red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
