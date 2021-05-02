@@ -19,6 +19,13 @@ class ReferenceVC: UITableViewController {
         alertLocomotiveIsNeeded()
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row > 0 { // not ThreeStatTitle
+            return 44.0
+        }
+        return UITableView.automaticDimension
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // ThreeStatTitle + ThreeStats + InTotal(ThreeStats) + EmptyCell + TwoStats
         return 1 + threeStats.count + 1 + 1 + twoStats.count
