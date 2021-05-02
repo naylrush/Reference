@@ -78,7 +78,7 @@ class ReferenceVC: UITableViewController {
     }
     
     private func refreshTwoStatCell(_ cell: TwoCell, _ stat: TwoStat) {
-        cell.refresh(stat.name, String(stat.value))
+        cell.refresh(stat.name, stat.value)
     }
     
     private func getEmptyCell() -> UITableViewCell {

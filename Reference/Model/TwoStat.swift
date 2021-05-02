@@ -7,7 +7,4 @@
 
 import Foundation
 
-struct TwoStat {
-    var name: String
-    var value: Int
-}
+typealias TwoStat = (name: String, value: String)

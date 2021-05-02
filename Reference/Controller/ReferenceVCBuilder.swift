@@ -50,32 +50,32 @@ class ReferenceVCBuilder {
         return (totalAxesCount, totalBrakingForce)
     }
     
-    private func calcTwoStats(_ train: Train, _ availableBrakingForce: Int) -> ([TwoStat], Bool) {
+    private func calcTwoStats(_ train: Train, _ availableBrakingForce: Int) -> (twoStats: [TwoStat], locomotiveIsNeeded: Bool) {
         var twoStats = [TwoStat]()
         
-        var requiredBrakingForce: Int!
+        var requiredBrakingForce = Int()
+        var coeff = Double()
         
         if train.hasOnlyEmptyCars {
-            let coeff = 0.55
+            coeff = 0.55
             requiredBrakingForce = calcRequiredBrakingForce(train, coeff)
         } else {
-            var coeff = 0.33
-            while coeff >= 0.28 {
+            for coeff_100 in stride(from: 33, through: 28, by: -1) {
+                coeff = Double(coeff_100) / 100;
                 requiredBrakingForce = calcRequiredBrakingForce(train, coeff)
                 if (requiredBrakingForce < availableBrakingForce) {
                     break
                 }
-                coeff -= 0.01
             }
         }
         
         let (requiredHandbrakeCount, availableHandbrakeCount) = calchandbrakeStats(train)
         
-        twoStats.append(TwoStat(name: "Масса поезда:", value: train.mass))
-        twoStats.append(TwoStat(name: "Требуемое ТУ:", value: requiredBrakingForce))
-        twoStats.append(TwoStat(name: "Распол. ТУ:", value: availableBrakingForce))
-        twoStats.append(TwoStat(name: "Требуемые РТ:", value: requiredHandbrakeCount))
-        twoStats.append(TwoStat(name: "Распол. РТ:", value: availableHandbrakeCount))
+        twoStats.append(("Масса поезда:", "\(train.mass)"))
+        twoStats.append(("Требуемое ТУ:", "\(requiredBrakingForce) (\(String(format: "%.2f", coeff)))"))
+        twoStats.append(("Распол. ТУ:", "\(availableBrakingForce)"))
+        twoStats.append(("Требуемые РТ:", "\(requiredHandbrakeCount)"))
+        twoStats.append(("Распол. РТ:", "\(availableHandbrakeCount)"))
         
         let locomotiveIsNeeded = requiredBrakingForce > availableBrakingForce
         
