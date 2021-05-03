@@ -14,3 +14,6 @@
 Можно выбрать один из предоставленных локомотивов.  
 <img src="https://raw.githubusercontent.com/naylrush/Reference/main/Screenshots/locomotive-3.png" width="400">
 <img src="https://raw.githubusercontent.com/naylrush/Reference/main/Screenshots/locomotive-4.png" width="400">
+
+## Privacy Policy
+[Link](https://www.privacypolicies.com/live/c5336e04-05b6-4878-8548-cb2bf3031f99)
